@@ -1,0 +1,6 @@
+{
+  "name": "Free App Maker",
+  "description": "Create and run clean, no-code custom database apps instantly via manual screens or interactive text prompts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

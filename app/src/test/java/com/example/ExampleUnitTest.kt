@@ -2,6 +2,7 @@ package com.example
 
 import com.example.data.*
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue
@@ -14,11 +15,11 @@ class ExampleUnitTest {
     }
 
     private val dummyDao = object : AppMakerDao {
-        override fun getAllApps(): Flow<List<AppDefinition>> = throw NotImplementedError()
+        override fun getAllApps(): Flow<List<AppDefinition>> = flowOf(emptyList())
         override suspend fun getAppById(id: Int): AppDefinition? = null
-        override fun getFieldsForApp(appId: Int): Flow<List<AppField>> = throw NotImplementedError()
+        override fun getFieldsForApp(appId: Int): Flow<List<AppField>> = flowOf(emptyList())
         override suspend fun getFieldsForAppSync(appId: Int): List<AppField> = emptyList()
-        override fun getRecordsForApp(appId: Int): Flow<List<AppRecord>> = throw NotImplementedError()
+        override fun getRecordsForApp(appId: Int): Flow<List<AppRecord>> = flowOf(emptyList())
         override suspend fun insertApp(app: AppDefinition): Long = 0
         override suspend fun insertField(field: AppField): Long = 0
         override suspend fun insertRecord(record: AppRecord): Long = 0

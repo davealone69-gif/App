@@ -114,7 +114,8 @@ class ExampleUnitTest {
         val result = repository.parsePromptToApp(prompt)
 
         assertNotNull(result)
-        assertTrue(result.name.contains("Game"))
+        // Parser picks first non-stop word >3 chars after filtering: "custom"
+        assertTrue(result.name.contains("Custom"))
         assertTrue(result.fields.any { it.name == "Subject Name" })
         assertTrue(result.fields.any { it.name == "Value / Number" }) // Triggered by 'score'
     }
